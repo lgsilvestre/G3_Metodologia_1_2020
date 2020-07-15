@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #333265;" stylesheets="@../css/titledpane.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorGeneral">
    <children>
       <AnchorPane layoutY="20.0" prefHeight="580.0" prefWidth="230.0" style="-fx-background-color: #121258;">
          <children>
-            <JFXTextField fx:id="fraseTF" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="30.0" onKeyTyped="#ingresarFrase" opacity="0.87" prefHeight="30.0" prefWidth="200.0" promptText="Frase" style="-fx-background-color: white;" unFocusColor="#3c77ba">
+            <JFXTextField fx:id="fraseTF" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="30.0" onKeyReleased="#formatearLetra" onKeyTyped="#ingresarFrase" opacity="0.87" prefHeight="30.0" prefWidth="200.0" promptText="Frase" style="-fx-background-color: white;" unFocusColor="#3c77ba">
                <font>
                   <Font name="Verdana" size="14.0" />
                </font>
@@ -125,6 +128,9 @@
             </TitledPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="242.0" layoutY="20.0" prefHeight="572.0" prefWidth="547.0" style="-fx-background-color: white;" />
+      <AnchorPane fx:id="lienzo" layoutX="242.0" layoutY="20.0" prefHeight="572.0" prefWidth="547.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="fraseFormat" layoutX="52.0" layoutY="37.0" />
+         </children></AnchorPane>
    </children>
 </AnchorPane>

@@ -12,7 +12,7 @@
    <children>
       <AnchorPane layoutY="20.0" prefHeight="580.0" prefWidth="230.0" style="-fx-background-color: #121258;">
          <children>
-            <JFXTextField fx:id="fraseTF" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="30.0" onKeyReleased="#formatearLetra" onKeyTyped="#ingresarFrase" opacity="0.87" prefHeight="30.0" prefWidth="200.0" promptText="Frase" style="-fx-background-color: white;" unFocusColor="#3c77ba">
+            <JFXTextField fx:id="fraseTF" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="30.0" onKeyReleased="#formatear" onKeyTyped="#ingresarFrase" opacity="0.87" prefHeight="30.0" prefWidth="200.0" promptText="Frase" style="-fx-background-color: white;" unFocusColor="#3c77ba">
                <font>
                   <Font name="Verdana" size="14.0" />
                </font>

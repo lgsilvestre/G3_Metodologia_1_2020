@@ -32,6 +32,10 @@ public class ControladorGeneral {
 
     }
 
+    /**
+     * detecta letras de alfabeto, en caso de ser cualquier  otra tecla, deshabilita la edicion del campo de texto
+     * @param event
+     */
     @FXML
     public void ingresarFrase(KeyEvent event){
         String cRaw = event.getCharacter();
@@ -85,15 +89,16 @@ public class ControladorGeneral {
         formatear();
     }
 
+    /**
+     * Metodo que carga la fuente descrita en fuentes/CargadorFuentes.java ,
+     * donde es utilizada en una label dentro del lienzo del programa
+     * @throws IOException
+     */
     public void formatear() throws IOException {
         CargadorFuentes fuenteMaster= new CargadorFuentes();
         String frase= fraseTF.getText();
         fraseFormat.setFont(fuenteMaster.manuscrita);
         fraseFormat.setText(frase);
         System.out.println("done "+frase);
-    }
-
-    public void formatearLetra(KeyEvent event) throws IOException {
-        formatear();
     }
 }

@@ -57,7 +57,7 @@ public class ControladorGeneral {
 
     public void simbolo3() throws IOException {
         String texto = fraseTF.getText();
-        fraseTF.setText(texto + "...");
+        fraseTF.setText(texto + "\"");
         formatear();
     }
 
@@ -69,7 +69,7 @@ public class ControladorGeneral {
 
     public void simbolo5() throws IOException {
         String texto = fraseTF.getText();
-        fraseTF.setText(texto + "\"");
+        fraseTF.setText(texto + "'");
         formatear();
     }
 

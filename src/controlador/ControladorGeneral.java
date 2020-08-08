@@ -14,6 +14,7 @@ public class ControladorGeneral {
     //Elementos gráficos
     public JFXTextField fraseTF;
     public JFXTextField expresionTF;
+    public JFXTextField RotacionTF;
     public TitledPane simbolosTP;
     public TitledPane opcionesTP;
     public AnchorPane lienzo;
@@ -101,4 +102,29 @@ public class ControladorGeneral {
         fraseFormat.setText(frase);
         System.out.println("done "+frase);
     }
+
+    /**
+     * Metodo que rota la frase formateada en base a grados en un rango de 0 - 180 grados, solo numeros enteros
+     * @throws NumberFormatException
+     */
+    public void Rotacion(){
+        try {
+            System.out.println(RotacionTF.getCharacters());
+            int angulo = Integer.parseInt(String.valueOf(RotacionTF.getCharacters()));
+            if(angulo >= 0 && angulo <= 180){
+                fraseFormat.setRotate(angulo);
+                /* aca estoy probando los puntos(layout x,y) en base a los angulos para un posible acomodamiento en el caso si
+                la la frase se saliese del canvas
+                */
+                System.out.println((fraseFormat.getLayoutX()*Math.asin(angulo)+fraseFormat.getLayoutX()*Math.acos(angulo))+","+fraseFormat.getLayoutY());
+            }
+        }catch (NumberFormatException y){
+            System.out.println("no es valido la rotacion puesta");
+
+        }finally{
+
+        }
+    }
+
+
 }

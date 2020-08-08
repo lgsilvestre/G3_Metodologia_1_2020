@@ -81,7 +81,7 @@
                               <Font name="Verdana" size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton layoutX="12.0" layoutY="74.0" prefHeight="28.0" prefWidth="87.0" style="-fx-background-color: #3C77BA;" text="Rotar">
+                        <JFXButton layoutX="12.0" layoutY="74.0" onAction="#Rotacion" prefHeight="28.0" prefWidth="87.0" style="-fx-background-color: #3C77BA;" text="Rotar">
                            <font>
                               <Font name="Verdana" size="14.0" />
                            </font>
@@ -112,7 +112,7 @@
                               <Insets />
                            </opaqueInsets>
                         </JFXTextField>
-                        <JFXTextField alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="115.0" layoutY="73.0" onKeyTyped="#ingresarFrase" opacity="0.87" prefHeight="30.0" prefWidth="76.0" promptText="0 - 180°" style="-fx-background-color: white;" unFocusColor="#3c77ba">
+                        <JFXTextField fx:id="RotacionTF" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="115.0" layoutY="73.0" onKeyTyped="#ingresarFrase" opacity="0.87" prefHeight="30.0" prefWidth="76.0" promptText="0 - 180°" style="-fx-background-color: white;" unFocusColor="#3c77ba">
                            <font>
                               <Font name="Verdana" size="14.0" />
                            </font>

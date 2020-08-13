@@ -3,6 +3,8 @@ package controlador;
 import com.jfoenix.controls.JFXTextField;
 import fuentes.CargadorFuentes;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyEvent;
@@ -10,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class ControladorGeneral {
     //Elementos gráficos
@@ -188,9 +191,27 @@ public class ControladorGeneral {
 
     @FXML
     private void Trasladar(){
-        int posX = Integer.parseInt(posXTras.getCharacters().toString());
-        int posY = Integer.parseInt(posYTras.getCharacters().toString());
-        fraseFormat.relocate(posX, posY);
+        int posX = Integer.parseInt(posXTras.getText());
+        int posY = Integer.parseInt(posYTras.getText());
+
+        if(posX < 0 || posY < 0 || fraseFormat.getWidth()+posX > 547 || fraseFormat.getHeight()+posY > 572){
+            Alert alertaTraslado = new Alert(Alert.AlertType.CONFIRMATION);
+            alertaTraslado.setTitle("Traslado fuera de los límites");
+            alertaTraslado.setHeaderText("Parece que las coordenadas que ingresaste están fuera de los límites. " +
+                    "Esto puede causar que la frase desaparezca del lienzo y que el programa falle");
+            alertaTraslado.setContentText("¿Continuar?");
+
+            Optional<ButtonType> result = alertaTraslado.showAndWait();
+            if (result.get() == ButtonType.OK) fraseFormat.relocate(posX, posY);
+            else {
+                posXTras.clear();
+                posYTras.clear();
+            }
+
+        }
+        else{
+            fraseFormat.relocate(posX, posY);
+        }
     }
 
 

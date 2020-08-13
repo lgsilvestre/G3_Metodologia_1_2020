@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="G3_Metodologia_1_2020:jar">
+    <output-path>$PROJECT_DIR$/G3_Metodologia_1_2020_jar</output-path>
+    <root id="archive" name="G3_Metodologia_1_2020.jar">
+      <element id="module-output" name="G3_Metodologia_1_2020" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/librerías/jfoenix-8.0.8.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

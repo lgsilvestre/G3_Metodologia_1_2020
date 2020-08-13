@@ -183,5 +183,15 @@ public class ControladorGeneral {
         }
     }
 
+    @FXML private JFXTextField posXTras;
+    @FXML private JFXTextField posYTras;
+
+    @FXML
+    private void Trasladar(){
+        int posX = Integer.parseInt(posXTras.getCharacters().toString());
+        int posY = Integer.parseInt(posYTras.getCharacters().toString());
+        fraseFormat.relocate(posX, posY);
+    }
+
 
 }

@@ -115,12 +115,13 @@ public class ControladorGeneral {
      * @throws IOException
      */
     public void invertir() throws IOException {
-        String[] texto = (fraseTF.getText()).split(" ");
+        String[] texto = (frase.split(" "));
         String aux = "";
         for (int i = texto.length-1; i >= 0; i--) {
             aux = aux + texto[i] + " ";
         }
         fraseTF.setText(aux);
+        frase=aux;
         formatear();
     }
 
